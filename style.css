@@ -1,0 +1,95 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 20px;
+  color: white;
+  text-align: center;
+  font-family: Baskerville, Georgia, serif;
+  background:
+    radial-gradient(ellipse at top, #382052, transparent 65%),
+    linear-gradient(160deg, #100b20, #241235, #100b20);
+}
+
+#invitation {
+  max-width: 600px;
+  margin: 50px auto;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+body.open #invitation {
+  opacity: 1;
+}
+
+h1 {
+  color: #e5c8ff;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: normal;
+}
+
+.subtitle {
+  color: #d9c3ed;
+  font-size: 1.2rem;
+}
+
+.cake {
+  font-size: 100px;
+  margin: 35px 0;
+}
+
+.message {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f0e6fa;
+}
+
+.signoff {
+  font-size: 1.7rem;
+  color: #e5c8ff;
+}
+
+.curtains {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 25px;
+  background: linear-gradient(90deg, #2b103e, #6b3182, #38164f);
+  transition: transform 1.8s ease, opacity 1.8s ease;
+}
+
+.curtains h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
+}
+
+button {
+  padding: 15px 25px;
+  border: 1px solid #e5c8ff;
+  border-radius: 30px;
+  background: #e5c8ff;
+  color: #251133;
+  font: 1rem Baskerville, Georgia, serif;
+  cursor: pointer;
+}
+
+body.open .curtains {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
